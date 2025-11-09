@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stytle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<main>
+    <div class="titol">
+        <h3> Private class tracker </h3>
+    </div>
+    <div class="principal">
+        <div class="container-form-class">
+        <form id="class-form">
+            <h2>Afegir classe particular: </h2>
+            <label for="alumne">Alumne/a: </label>
+            <select id="alumne" name="alumne" required>
+            </select>
+
+            <label for="data"> Data: </label>
+            <input type="date" id="date" required>
+
+            <label for="hora"> Horari: </label>
+            <input type="text" id="hora">
+
+            <label for="topic">Matèria</label>
+            <select id="topic" id="topic">
+                <option value="">-- Select an option --</option>
+                <option value="Math">Mates</option>
+                <option value="Physics">Física</option>
+                <option value="Chemistry">Química</option>
+                <option value="Tech">Technology</option>
+
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+
+        <div class="container-form-student">
+            <button type="button" class="add-student" id="add-student">Add student:</button>
+
+            <form id="new-student-form" class="new-student-form">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required/>
+                </div>
+
+                <div class="form-row">
+                <label for="school">School:</label>
+                    <select id="school">
+                        <option value="">-- Select an option --</option>
+                        <option value="INS Mediterrania">INS Mediterrania</option>
+                        <option value="INS Maremar">INS Maremar</option>
+                        <option value="Escolàpies">Escolàpies</option>
+                        <option value="Lluís Millet">Lluís Millet</option>
+                        <option value="Bergantí">Bergantí</option>
+                        <option value="INS Premià">INS Premià</option>
+                        <option value="INS Teià">INS Teià</option>
+                        <option value="Universitat">Universitat</option>
+                        <option value="INS Alella">INS Alella</option>
+                    </select>
+                 </div>
+
+                 <div class="form-row"> 
+                    <label for="level">Level:</label>
+                     <select id="level" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="4t Prim">4t Prim</option>
+                        <option value="5e Prim">5e Prim</option>
+                        <option value="6e Prim">6e Prim</option>
+                        <option value="1r ESO">1r ESO</option>
+                        <option value="2n ESO">2n ESO</option>
+                        <option value="3r ESO">3r ESO</option>
+                        <option value="4t ESO">4t ESO</option>
+                        <option value="1r Batx">1r Batx</option>
+                        <option value="2n Batx">2n Batx</option>
+                     </select>
+                    
+                 </div>
+                
+                <div class="form-row">
+                 <label for="town">Town:</label>
+                  <select id="town">
+                   <option value="">-- Select an option --</option>
+                   <option value="El Masnou">El Masnou</option>
+                   <option value="Teia">Teià</option>
+                   <option value="Alella">Alella</option>
+                   <option value="Premià">Premià</option>
+                  </select>
+                </div>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <canvas id="bar-plot"></canvas>
+
+    <button id="export-alumnes">Exportar alumnes</button>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script  src="main.js"></script>
+</body>
+</html>

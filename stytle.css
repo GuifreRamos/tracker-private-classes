@@ -1,0 +1,195 @@
+/* ======= ESTILS GENERALS ======= */
+body {
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+}
+
+
+main {
+    margin: 100px 100px;
+}
+
+
+/* --Disseny del títol-- */
+.titol{
+    font-size: 26px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left:20px;
+    background-color: #e66f6f;
+    border: 3px dashed white;
+    border-radius: 10px;
+}
+
+.titol:hover{
+    background-color: #e95fcb;
+    color: white;
+}
+
+.titol h3{
+    padding: 10px 40px;
+    margin-left: 50px;
+}
+
+/*-- DISSENY DEL CONTENIDOR GENERAL AMB LES 2 FORMS -- */
+.principal {
+    display: flex;
+    gap: 150px;
+}
+
+/* ======= FORMULARI DE  UNA CLASSE PARTICULAR ======= */
+.container-form-class {
+    background-color: rgb(176, 234, 234);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin: 20px auto;
+}
+
+.container-form-class form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container-form-class form label {
+    font-size: 24px;
+}
+
+.container-form-class form input,
+.container-form-class form select {
+    font-size: 24px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 350px;
+    background-color: #fff;
+}
+
+.container-form-class form input:hover,
+.container-form-class form select:hover{
+    background-color: #f7d494;
+}
+
+.container-form-class form input:focus,
+.container-form-class form select:focus {
+    outline: none;
+    border-color: #f3a847;
+    box-shadow: 0 0 5px #f3a847;
+}
+
+/* ======= BOTÓ DE SUBMIT  ======= */
+button {
+    width: 300px;
+    height: auto;
+    padding: 8px 4px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: #f3a847;
+    color: #000;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ed8d0e;
+}
+
+
+/* --BOTÓ DECORATIU DE AFEGIR ALUMNE-- */
+.add-student {
+    width: 300px;
+    margin-top: 25px;
+    align-self: center;
+    background-color: rgb(115, 240, 245);
+    border-radius: 12px;
+    border: 2px solid rgb(241, 14, 14);
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+.add-student:hover {
+    background-color: #f0a44e;
+    border-radius: 20px;
+    border: 3px dashed #f4ed16;
+}
+
+/* ======= FORMULARIO DE ALUMNES ======= */
+.container-form-student {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.new-student-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 20px 50px;
+    padding: 20px 25px;
+    background-color: #d9f7a8;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+/* Cada fila de label + input */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* menor distancia */
+}
+
+.form-row label {
+    font-size: 22px;
+    width: 130px; /* más estrecho */
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    min-width: 150px;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+    outline: none;
+    border-color: #f3a847;
+    box-shadow: 0 0 5px #f3a847;
+}
+
+/* ======= GRÁFICO ======= */
+#bar-plot {
+    margin: 50px auto 20px auto;
+    padding: 40px 30px;
+    width: 700px;
+    height: 500px;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+    .principal {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row label {
+        width: auto;
+    }
+
+    button,
+    .add-student {
+        width: 100%;
+    }
+}
