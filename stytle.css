@@ -6,7 +6,7 @@ body {
 
 
 main {
-    margin: 100px 100px;
+    margin: 100px 140px 80px 140px;
 }
 
 
@@ -34,7 +34,7 @@ main {
 /*-- DISSENY DEL CONTENIDOR GENERAL AMB LES 2 FORMS -- */
 .principal {
     display: flex;
-    gap: 150px;
+    gap: 50px;
 }
 
 /* ======= FORMULARI DE  UNA CLASSE PARTICULAR ======= */
@@ -164,12 +164,86 @@ button:hover {
     box-shadow: 0 0 5px #f3a847;
 }
 
-/* ======= GRÁFICO ======= */
-#bar-plot {
-    margin: 50px auto 20px auto;
+/* ======= GRÁFICS ======= */
+#bar-plot-students{
+    margin: 60px auto 20px auto;
     padding: 40px 30px;
-    width: 700px;
+    width: 800px;
+    height: 600px;
+}
+
+#pie-plot-subjects{
+    margin: 40px auto 20px auto;
+    padding: 40px 30px;
+    width:500px;
+    height: 400px;
+}
+
+#line-plot-trend{
+    margin: 40px auto 20px auto;
+    padding: 40px 30px;
+    width:700px;
     height: 500px;
+}
+
+/* ==== BUTTONS FUNCTIONALITIES ==== */
+.functionalities{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+
+.functionalities-export{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.functionalities button{
+    background-color: rgb(250, 205, 122);
+    border: 2px solid #000000;
+}
+
+.functionalities button:hover{
+    background-color: #f0a44e;
+    border: 2px solid white;
+}
+
+.add-school-form,
+.add-subject-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.add-school-form input,
+.add-subject-form input{
+    margin: 30px auto 2px;
+    background-color: #c5c3c3e9;
+    padding: auto 20px;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.add-school-form input:hover{
+    background-color: #adaaaae9;
+}
+
+.functionalities .submit-button{
+    background-color: #84ef97;
+    border: 1px solid #fff;
+    font-size: 20px;
+    padding: 10px 12px;
+    width: 200px;
+    border-radius: 4px;
+    margin: 20px auto 10px auto;
+    align-self: center;
+}
+
+.functionalities .submit-button:hover{
+    background-color: #50e76c;
 }
 
 /* ======= RESPONSIVE ======= */

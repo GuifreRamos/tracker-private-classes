@@ -100,8 +100,35 @@
     </div>
 
     <canvas id="bar-plot-students"></canvas>
+    <canvas id="pie-plot-subjects"></canvas>
+    <canvas id="line-plot-trend"></canvas>
 
-    <button id="export-alumnes">Exportar alumnes</button>
+    <div class="functionalities">
+
+    <div class="functionalities-export">
+        <button id="export-alumnes">Exportar llista alumnes</button>
+        <button id="export-classes">Exportar llista classes</button>
+        <p></p>
+    </div>
+
+    <div class="functionalities-schools"> 
+        <button id="add-school-button">Afegir centre</button>
+        <form id="add-school-form" class="add-school-form">
+            <input type="text" id="adding-school" placeholder="Add school:" required>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="functionalities-subjects">
+        <button id="add-subject-button">Afegir assignatura</button>
+        <form id="add-subject-form" class="add-subject-form">
+            <input type="text" id ="adding-subject" placeholder="Add subject:" required>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+
+
+    </div>
+    </div>
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
