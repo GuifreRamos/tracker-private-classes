@@ -4,50 +4,132 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
 main {
-    margin: 100px 140px 80px 140px;
+    margin: 100px 140px 80px 100px;
+    padding: 0 20px;
 }
 
 
-/* --Disseny del títol-- */
-.titol{
-    font-size: 26px;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    margin-left:20px;
-    background-color: #e66f6f;
-    border: 3px dashed white;
-    border-radius: 10px;
+/* ======= TÍTOLS ======= */
+.titol {
+    font-size: 30px;
+    background: linear-gradient(135deg, #ff8a8a, #e66f6f);
+    border-radius: 14px;
+    padding: 15px 40px;
+    margin: 40px auto;
+    text-align: center;
+    width: 400px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    transform: translateY(0);
+    transition: 0.25s ease;
+    cursor: default;
 }
 
-.titol:hover{
-    background-color: #e95fcb;
-    color: white;
+.titol:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #ffa1dc, #e95fcb);
 }
 
-.titol h3{
-    padding: 10px 40px;
-    margin-left: 50px;
+.titol h3 {
+    margin: 0;
+    padding: 0;
 }
 
-/*-- DISSENY DEL CONTENIDOR GENERAL AMB LES 2 FORMS -- */
+
+
+/* ======= INTERACCIÓ GLOBAL ======= */
+input:hover,
+select:hover {
+    box-shadow: 0 0 5px rgba(243,168,71,0.5);
+    transform: scale(1.02);
+    transition: .15s;
+}
+
+
+/* ======= CONTENEDOR FUNCIONALIDADES ======= */
+.functionalities {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 25px 20px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeInUp .4s forwards ease-out;
+}
+
+.functionalities > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.functionalities .add-feature-button {
+    width: 240px;
+    background-color: rgb(250, 205, 122);
+    border: 2px solid #000000;
+}
+
+.functionalities .add-feature-button:hover {
+    background-color: #f0a44e;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.submit-button {
+    width: 200px;
+    margin: 20px auto 10px auto;
+    padding: 10px 12px;
+    background-color: #50e66b;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.submit-button:hover {
+    background-color: #0be032;
+}
+
+.functionalities-export {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ======= CONTENIDOR PRINCIPAL ======= */
 .principal {
     display: flex;
     gap: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-/* ======= FORMULARI DE  UNA CLASSE PARTICULAR ======= */
+
+/* ======= FORMULARI CLASSE ======= */
 .container-form-class {
-    background-color: rgb(176, 234, 234);
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: rgb(192, 230, 230);
     border: 2px solid #fff;
     border-radius: 10px;
-    padding: 15px 30px;
-    margin: 20px auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeInUp .4s forwards ease-out;
 }
 
 .container-form-class form {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -59,16 +141,16 @@ main {
 
 .container-form-class form input,
 .container-form-class form select {
-    font-size: 24px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
     width: 350px;
+    padding: 8px 10px;
+    font-size: 24px;
     background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .container-form-class form input:hover,
-.container-form-class form select:hover{
+.container-form-class form select:hover {
     background-color: #f7d494;
 }
 
@@ -79,82 +161,51 @@ main {
     box-shadow: 0 0 5px #f3a847;
 }
 
-/* ======= BOTÓ DE SUBMIT  ======= */
-button {
-    width: 300px;
-    height: auto;
-    padding: 8px 4px;
-    font-size: 20px;
-    border-radius: 8px;
-    background-color: #f3a847;
-    color: #000;
-    border: 2px solid #000;
-    cursor: pointer;
-}
 
-button:hover {
-    background-color: #ed8d0e;
-}
-
-
-/* --BOTÓ DECORATIU DE AFEGIR ALUMNE-- */
-.add-student {
-    width: 300px;
-    margin-top: 25px;
-    align-self: center;
-    background-color: rgb(115, 240, 245);
-    border-radius: 12px;
-    border: 2px solid rgb(241, 14, 14);
-    font-size: 24px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: pointer;
-}
-
-.add-student:hover {
-    background-color: #f0a44e;
-    border-radius: 20px;
-    border: 3px dashed #f4ed16;
-}
-
-/* ======= FORMULARIO DE ALUMNES ======= */
+/* ======= FORMULARI ALUMNES ======= */
 .container-form-student {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 50px;
 }
 
 .new-student-form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin: 20px 50px;
+    gap: 30px;
+    margin: 10px 50px;
     padding: 20px 25px;
-    background-color: #d9f7a8;
+    background-color: #ecfcd4;
     border: 2px solid white;
     border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeInUp .4s forwards ease-out;
 }
 
-/* Cada fila de label + input */
+.new-student-form .form-row{
+    margin-bottom: 20px;
+}
+
 .form-row {
     display: flex;
     align-items: center;
-    gap: 6px; /* menor distancia */
+    gap: 5px;
 }
 
 .form-row label {
+    width: 130px;
     font-size: 22px;
-    width: 130px; /* más estrecho */
 }
 
 .form-row input,
 .form-row select {
     flex: 1;
-    font-size: 20px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
     min-width: 150px;
+    padding: 6px 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .form-row input:focus,
@@ -164,90 +215,118 @@ button:hover {
     box-shadow: 0 0 5px #f3a847;
 }
 
-/* ======= GRÁFICS ======= */
-#bar-plot-students{
-    margin: 60px auto 20px auto;
-    padding: 40px 30px;
-    width: 800px;
-    height: 600px;
+.form-row input:hover,
+.form-row select:hover{
+    background-color: #f7d494;
 }
 
-#pie-plot-subjects{
-    margin: 40px auto 20px auto;
-    padding: 40px 30px;
-    width:500px;
-    height: 400px;
+
+/* ======= BOTONES ======= */
+button {
+    width: 300px;
+    padding: 8px 4px;
+    font-size: 20px;
+    background-color: #f3a847;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-#line-plot-trend{
-    margin: 40px auto 20px auto;
-    padding: 40px 30px;
-    width:700px;
-    height: 500px;
+button:hover {
+    background-color: #ed8d0e;
 }
 
-/* ==== BUTTONS FUNCTIONALITIES ==== */
-.functionalities{
-    margin-top: 70px;
-    display: flex;
-    flex-direction: row;
-    gap: 75px;
+.add-student {
+    width: 300px;
+    margin: 25px auto;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(115, 240, 245);
+    border: 2px solid rgb(241, 14, 14);
+    border-radius: 12px;
+    cursor: pointer;
 }
 
-.functionalities-export{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.functionalities button{
-    background-color: rgb(250, 205, 122);
-    border: 2px solid #000000;
-}
-
-.functionalities button:hover{
+.add-student:hover {
     background-color: #f0a44e;
-    border: 2px solid white;
+    border: 4px dashed #f4ed16;
+    border-radius: 20px;
+    font-size: 26px;
+    color: white;
+    transition: 0.05s;
+    font-weight: 500;
 }
 
+
+/* ======= FORMULARIS ESPECÍFICS ======= */
 .add-school-form,
-.add-subject-form{
+.add-subject-form,
+.add-town-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-.add-school-form input,
-.add-subject-form input{
-    margin: 30px auto 2px;
-    background-color: #c5c3c3e9;
-    padding: auto 20px;
-    font-size: 26px;
-    border: none;
-    border-radius: 10px;
-    width: 300px;
+    justify-content: space-around;
 }
 
-.add-school-form input:hover{
+.add-school-form input,
+.add-subject-form input,
+.add-town-form input {
+    width: 95%;
+    margin: 30px auto 2px;
+    padding: 6px;
+    font-size: 22px;
+    background-color: #c5c3c3e9;
+    border: none;
+    border-radius: 10px;
+}
+
+.add-school-form input:hover,
+.add-subjct-form input:hover,
+.add-town-form input:hover {
     background-color: #adaaaae9;
 }
 
-.functionalities .submit-button{
-    background-color: #84ef97;
-    border: 1px solid #fff;
-    font-size: 20px;
-    padding: 10px 12px;
-    width: 200px;
-    border-radius: 4px;
-    margin: 20px auto 10px auto;
-    align-self: center;
+
+/* ======= GRÁFICS ======= */
+#bar-plot-students {
+    width: 800px;
+    height: 600px;
+    margin: 60px auto 20px auto;
+    padding: 40px 30px;
 }
 
-.functionalities .submit-button:hover{
-    background-color: #50e76c;
+#pie-plot-subjects {
+    width: 500px;
+    height: 400px;
+    margin: 40px auto 20px auto;
+    padding: 40px 30px;
 }
+
+#line-plot-trend {
+    width: 700px;
+    height: 500px;
+    margin: 40px auto 20px auto;
+    padding: 40px 30px;
+}
+
+
+/* ======= ANIMACIONS ======= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* ======= RESPONSIVE ======= */
 @media (max-width: 768px) {
+
     .principal {
         flex-direction: column;
         gap: 60px;

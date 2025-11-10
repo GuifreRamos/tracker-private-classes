@@ -11,6 +11,8 @@
     <div class="titol">
         <h3> Private class tracker </h3>
     </div>
+
+
     <div class="principal">
         <div class="container-form-class">
         <form id="class-form">
@@ -35,7 +37,7 @@
 
             </select>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-button">Submit</button>
         </form>
         </div>
 
@@ -92,42 +94,49 @@
                   </select>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit-button">Submit</button>
 
             </form>
 
         </div>
     </div>
 
-    <canvas id="bar-plot-students"></canvas>
-    <canvas id="pie-plot-subjects"></canvas>
-    <canvas id="line-plot-trend"></canvas>
-
     <div class="functionalities">
-
-    <div class="functionalities-export">
-        <button id="export-alumnes">Exportar llista alumnes</button>
-        <button id="export-classes">Exportar llista classes</button>
-        <p></p>
-    </div>
-
-    <div class="functionalities-schools"> 
-        <button id="add-school-button">Afegir centre</button>
+        <div class="functionalities-schools"> 
+        <button id="add-school-button" class="add-feature-button">Afegir centre</button>
         <form id="add-school-form" class="add-school-form">
-            <input type="text" id="adding-school" placeholder="Add school:" required>
+            <input type="text" id="adding-school" placeholder="Nom centre:" required>
             <button class="submit-button" type="submit">Submit</button>
         </form>
     </div>
 
     <div class="functionalities-subjects">
-        <button id="add-subject-button">Afegir assignatura</button>
+        <button id="add-subject-button" class="add-feature-button">Afegir assignatura</button>
         <form id="add-subject-form" class="add-subject-form">
-            <input type="text" id ="adding-subject" placeholder="Add subject:" required>
+            <input type="text" id ="adding-subject" placeholder="Nom assignatura:" required>
             <button class="submit-button" type="submit">Submit</button>
         </form>
-
-
     </div>
+
+    <div class="functionalities-towns">
+        <button id="add-town-button" class="add-feature-button">Afegir municipi</button>
+        <form id="add-town-form" class="add-town-form">
+            <input type="text" id="adding-town" placeholder="Nom municipi:" required>
+            <button class="submit-button" type="button">Submit</button>
+        </form>
+    </div>
+    </div>
+    
+
+    <canvas id="bar-plot-students"></canvas>
+    <canvas id="pie-plot-subjects"></canvas>
+    <canvas id="line-plot-trend"></canvas>
+
+
+    <div class="export">
+        <button id="export-alumnes">Exportar llista alumnes</button>
+        <button id="export-classes">Exportar llista classes</button>
+        <p></p>
     </div>
 
 </main>
