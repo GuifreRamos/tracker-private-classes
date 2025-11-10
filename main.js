@@ -1,25 +1,95 @@
 document.addEventListener("DOMContentLoaded",async() =>{
+
+
     //VARIABLES
     const classForm = document.getElementById("class-form");
     const studentsForm = document.getElementById('new-student-form');
     const selectAlumne = document.getElementById("alumne")
 
+    const schoolForm = document.getElementById("add-school-form")
+    const subjectForm = document.getElementById("add-subject-form")
+    const townForm = document.getElementById("add-town-form")
+    const selectSchool = document.getElementById("school")
+    const selectSubject = document.getElementById("subject")
+    const selectTown = document.getElementById("town")
+
     const savedStudents = JSON.parse(localStorage.getItem('students')) || [];
     const savedClasses = JSON.parse(localStorage.getItem("classes")) || [];
+    const savedSchools = JSON.parse(localStorage.getItem("schools")) || [];
+    const savedSubjects = JSON.parse(localStorage.getItem("subjects")) || [];
+    const savedTowns = JSON.parse(localStorage.getItem("towns")) || [];
 
     // FUNCIÓ : Actulitzar select de alumnes:
-    function updateAlumneOptions() {
-        selectAlumne.innerHTML = `<option value="">-- Selecciona una opción --</option>`;
-        //Completar amb els alumnes guardats
-        savedStudents.forEach((student)=>{
+    function updateSelectOptions(selectElement, dataArray, labelProp = "name") {
+        selectElement.innerHTML = `<option value="">-- Selecciona una opción --</option>`;
+        //Completar amb les entrades guardades
+        dataArray.forEach( item => {
             const option = document.createElement("option");
-            option.value = student.name;
-            option.textContent = student.name;
-            selectAlumne.appendChild(option);
+
+            if(typeof item === "object"){
+                option.value = item[labelProp];
+                option.textContent = item[labelProp];
+            } else {
+                option.value = item;
+                option.textContent = item;
+            }
+            selectElement.appendChild(option);
         });
     }
 
-    updateAlumneOptions();
+    function refreshAllSelects() {
+    updateSelectOptions(selectAlumne, savedStudents);
+    updateSelectOptions(selectSubject, savedSubjects);
+    updateSelectOptions(selectSchool, savedSchools);
+    updateSelectOptions(selectTown, savedTowns);
+    }
+
+    refreshAllSelects();
+
+    if(subjectForm){
+        subjectForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const subject = document.getElementById("adding-subject").value
+
+            savedSubjects.push(subject)
+            localStorage.setItem("subjects", JSON.stringify(savedSubjects));
+            
+            refreshAllSelects();
+
+            subjectForm.reset();
+            alert("Assingatura afegida correctament!")
+        })
+    }
+
+        if(schoolForm){
+        schoolForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const school = document.getElementById("adding-school").value
+
+            savedSchools.push(school)
+            localStorage.setItem("schools", JSON.stringify(savedSchools));
+            
+            refreshAllSelects();
+
+            schoolForm.reset();
+            alert("Escola afegida correctament!")
+        })
+    }
+
+        if(townForm){
+        townForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const town = document.getElementById("adding-town").value
+
+            savedTowns.push(town)
+            localStorage.setItem("towns", JSON.stringify(savedTowns));
+            
+            refreshAllSelects();
+
+            townForm.reset();
+            alert("Muncipi afegit correctment!")
+        })
+    }
 
     if(studentsForm){
         studentsForm.addEventListener("submit", (event)=>{
@@ -27,7 +97,7 @@ document.addEventListener("DOMContentLoaded",async() =>{
 
             const name = document.getElementById("name").value;
             const school = document.getElementById("school").value;
-            const level = document.getElementById("level").value;
+            const level = document.getElementById("course").value;
             const town = document.getElementById("town").value;
 
             if (!name) return alert("El nom de l'alumne és obligatori");
@@ -42,8 +112,6 @@ document.addEventListener("DOMContentLoaded",async() =>{
             savedStudents.push({name,town,school,level});
             localStorage.setItem('students', JSON.stringify(savedStudents));
             
-            updateAlumneOptions();
-
             studentsForm.reset();
             alert("Alumne afegit correctament!");
         });
@@ -58,7 +126,7 @@ document.addEventListener("DOMContentLoaded",async() =>{
                 const alumneName = document.getElementById("alumne").value;
                 const data = document.getElementById("date").value;
                 const hora = document.getElementById("hora").value;
-                const materia = document.getElementById("topic").value;
+                const materia = document.getElementById("subject").value;
 
                 if (!alumneName) return alert("Has de seleccionar un alumne.");
 

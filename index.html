@@ -27,14 +27,8 @@
             <label for="hora"> Horari: </label>
             <input type="text" id="hora">
 
-            <label for="topic">Matèria</label>
-            <select id="topic" id="topic">
-                <option value="">-- Select an option --</option>
-                <option value="Math">Mates</option>
-                <option value="Physics">Física</option>
-                <option value="Chemistry">Química</option>
-                <option value="Tech">Technology</option>
-
+            <label for="subject">Matèria</label>
+            <select id="subject" id="subject">
             </select>
 
             <button type="submit" class="submit-button">Submit</button>
@@ -53,22 +47,12 @@
                 <div class="form-row">
                 <label for="school">School:</label>
                     <select id="school">
-                        <option value="">-- Select an option --</option>
-                        <option value="INS Mediterrania">INS Mediterrania</option>
-                        <option value="INS Maremar">INS Maremar</option>
-                        <option value="Escolàpies">Escolàpies</option>
-                        <option value="Lluís Millet">Lluís Millet</option>
-                        <option value="Bergantí">Bergantí</option>
-                        <option value="INS Premià">INS Premià</option>
-                        <option value="INS Teià">INS Teià</option>
-                        <option value="Universitat">Universitat</option>
-                        <option value="INS Alella">INS Alella</option>
                     </select>
                  </div>
 
                  <div class="form-row"> 
-                    <label for="level">Level:</label>
-                     <select id="level" required>
+                    <label for="course">Course:</label>
+                     <select id="course" required>
                         <option value="">-- Select an option --</option>
                         <option value="4t Prim">4t Prim</option>
                         <option value="5e Prim">5e Prim</option>
@@ -86,11 +70,6 @@
                 <div class="form-row">
                  <label for="town">Town:</label>
                   <select id="town">
-                   <option value="">-- Select an option --</option>
-                   <option value="El Masnou">El Masnou</option>
-                   <option value="Teia">Teià</option>
-                   <option value="Alella">Alella</option>
-                   <option value="Premià">Premià</option>
                   </select>
                 </div>
 
@@ -122,7 +101,7 @@
         <button id="add-town-button" class="add-feature-button">Afegir municipi</button>
         <form id="add-town-form" class="add-town-form">
             <input type="text" id="adding-town" placeholder="Nom municipi:" required>
-            <button class="submit-button" type="button">Submit</button>
+            <button class="submit-button" type="submit">Submit</button>
         </form>
     </div>
     </div>
